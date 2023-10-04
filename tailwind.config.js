@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Sofia: ["Sofia Sans Condensed", "sans-serif"],
+        Poppins: ["Poppins", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

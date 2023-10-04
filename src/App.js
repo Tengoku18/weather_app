@@ -1,14 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
+import Home from "./Home";
+import { createContext, useState } from "react";
+
+export const weatherContext = createContext(null);
 
 function App() {
+  const [weatherData, setWeatherData] = useState(null);
+  console.log("weather data", weatherData);
   return (
-    <div className="App">
-      <div className="text-3xl font-semibold text-blue-600">
-        {" "}
-        Hello Dear, wanna get some freeplay.{" "}
-      </div>
-    </div>
+    <weatherContext.Provider value={{ weatherData, setWeatherData }}>
+      <Home />
+    </weatherContext.Provider>
   );
 }
 
