@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./components/Form";
+import Detail from "./components/Detail";
 
 const Home = () => {
   return (
@@ -23,6 +24,9 @@ const Home = () => {
 
       <div className="my-20 flex w-full  justify-center">
         <Form />
+      </div>
+      <div className="max-w-7xl bg-[#99B8BD] mx-auto h-1/2 rounded-md  ">
+        <Detail />
       </div>
     </div>
   );

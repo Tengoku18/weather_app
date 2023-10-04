@@ -8,18 +8,17 @@ const Form = () => {
   const { setWeatherData } = useContext(weatherContext);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("I am console", inputText);
 
     try {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${inputText}&appid=45b661938ac147c3de8713daeda7ea42`
+          `https://api.openweathermap.org/data/2.5/weather?q=${inputText}&appid=${process.env.REACT_APP_WEATHERAPI_ID}`
         )
         .then((res) => {
           setWeatherData(res.data);
         })
         .catch((err) => {
-          console.log("Error while processing request.", err);
+          console.log("Error occured", err);
         });
     } catch (e) {
       console.log("Error while processing request.", e);
@@ -41,7 +40,7 @@ const Form = () => {
         />
         <button
           type="submit"
-          className=" px-5 rounded-full py-2 bg-black text-white"
+          className=" px-5 rounded-full py-2 bg-slate-600 text-white"
         >
           Submit
         </button>
