@@ -7,7 +7,7 @@ import { WeatherContext } from "./App";
 const Home = () => {
   const { weatherData } = useContext(WeatherContext);
   return (
-    <div className=" relative h-screen w-screen bg-center bg-no-repeat">
+    <div className=" relative h-screen w-screen  bg-center bg-no-repeat">
       <div className="absolute inset-y-0 -z-10  h-full w-full bg-black opacity-10" />
 
       <img
@@ -30,13 +30,16 @@ const Home = () => {
       </div>
 
       {weatherData && (
-        <div className="max-w-7xl bg-[#99B8BD] mx-auto h-fit  rounded-md  ">
+        <div className="max-w-7xl bg-[#99B8BD] mx-auto  h-fit md:h-1/2 rounded-md  ">
           {typeof weatherData === "object" ? (
             <Detail weatherData={weatherData} />
           ) : (
-            <div className="grid place-content-center w-full h-full text-4xl font-semibold text-white font-Poppins">
+            <div className="grid place-content-center w-full h-full   font-semibold text-white font-Poppins">
               {" "}
-              <h1 className="tracking-wider"> {weatherData}!!</h1>
+              <h1 className="tracking-wider text-2xl  md:text-4xl">
+                {" "}
+                {weatherData}!!
+              </h1>
             </div>
           )}
         </div>
