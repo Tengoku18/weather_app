@@ -85,7 +85,7 @@ const Detail = () => {
       </div>
     );
   } else {
-    return <div>Spinner</div>;
+    return null;
   }
 };
 
